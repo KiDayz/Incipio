@@ -35,7 +35,7 @@
     </div>
 {% else %}
     <div class="btn-group" style="min-width: 220px;">
-        <a class="btn btn-info" href="{{ path('project_missions_modifier', {'id': etude.id}) }}">
+        <a class="btn btn-info" href="{{ path('project_missions_modifier', {'id': mission.id}) }}">
             <i class="icon-user icon-white"></i>
             {{ mission.intervenant.personne.prenomNom | default("Intervenant non choisi") }}
             {{ mission.intervenant.nom | default("") }}

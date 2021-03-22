@@ -192,6 +192,7 @@ suivi:
   informations_qualites: Informations Qualités
   intermediaire: Intermédiaire
   intervenants: Intervenants
+  modifier_mission: Modifer le RM
   jeh: JEH
   jeh_ajouter: Ajouter des JEH
   jeh_nombre: Nombre JEH
@@ -204,6 +205,7 @@ suivi:
   mission_ajouter: Ajouter une mission
   mission_enregistrer_avant_ajout_jeh: Enregistrez la mission pour pouvoir ajouter des JEH
   missions_enregistrer: Enregistrer les missions
+  mission_enregistrer: Enrengistrer la mission
   modifier: Modifier
   modifier_les: Modifier les
   montant_brut: Montant Brut

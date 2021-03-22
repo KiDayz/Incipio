@@ -63,56 +63,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-4">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                    <tr>
-                        <td colspan="4">
-                            <button class="btn btn-primary btn-sm add-another-repartition" type="button">
-                                {{ 'suivi.jeh_ajouter'|trans({}, 'project') }}
-                            </button>
-                            <h4 style="display: inline;">{{ 'suivi.jeh_repartition'|trans({}, 'project') }}</h4>
-                        </td>
-                    </tr>
-                    </thead>
-                    <tbody class="repartition-list" data-count="{{ form.repartitionsJEH | length }}" data-prototype="
-                        <tr class='repartitions'>
-                            <td>
-                                <table class='table'>
-                                    <tr>
-                                        <th>{{ form_label(form.repartitionsJEH.vars.prototype.nbrJEH) | e }}</th>
-                                        <th>{{ form_label(form.repartitionsJEH.vars.prototype.prixJEH) | e }}</th>
-                                    </tr>
-                                    <tr>
-                                        <td>{{ form_widget(form.repartitionsJEH.vars.prototype.nbrJEH) | e }}</td>
-                                        <td>{{ form_widget(form.repartitionsJEH.vars.prototype.prixJEH) | e }}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    ">
-                    {% for repartitionJEH in form.repartitionsJEH %}
-                        <tr class="repartitions">
-                            <td>
-                                <table class="table">
-                                    <tr>
-                                        <th>{{ form_label(repartitionJEH.nbrJEH) }}</th>
-                                        <th>{{ form_label(repartitionJEH.prixJEH) }}</th>
-                                    </tr>
-                                    <tr>
-                                        <td>{{ form_widget(repartitionJEH.nbrJEH) }}
-                                            {{ form_errors(repartitionJEH.nbrJEH) }}</td>
-
-                                        <td>{{ form_widget(repartitionJEH.prixJEH) }}
-                                            {{ form_errors(repartitionJEH.prixJEH) }}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
         </div>
 
 
