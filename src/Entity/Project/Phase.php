@@ -131,6 +131,14 @@ class Phase
     private $procesVerbal;
 
     /**
+     * @var RepartitionJEH
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Project\RepartitionJEH", mappedBy="phase", cascade={"merge"})
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
+     */
+    private $repartitionsJEH;
+
+    /**
      * ADDITIONAL GETTERS/SETTERS.
      */
     public function getMontantHT()
@@ -158,6 +166,7 @@ class Phase
         $this->createdAt = new \DateTime('now');
         $this->prixJEH = 400;
         $this->avenantStatut = 0;
+        $this->repartitionsJEH = new ArrayCollection();
     }
 
     public function __toString()
@@ -531,4 +540,37 @@ class Phase
     {
         $this->procesVerbal = $procesVerbal;
     }
+
+    /**
+     * Add repartitionsJEH.
+     *
+     * @return repartitionsJEH
+     */
+    public function addRepartitionsJEH(repartitionsJEH $repartitionsJEH)
+    {
+        $this->repartitionsJEH[] = $repartitionsJEH;
+        $repartitionsJEH->setPhase($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove repartitionsJEH.
+     */
+    public function removeRepartitionsJEH(repartitionsJEH $repartitionsJEH)
+    {
+        $this->repartitionsJEH->removeElement($repartitionsJEH);
+        $repartitionsJEH->setPhase(null);
+    }
+
+    /**
+     * Get repartitionsJEH.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRepartitionsJEH()
+    {
+        return $this->repartitionsJEH;
+    }
+
 }

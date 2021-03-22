@@ -58,6 +58,14 @@ class RepartitionJEH
      */
     private $avMission;
 
+    /**
+     * @var Phase
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Project\Phase", inversedBy="repartitionsJEH", cascade={"remove"})
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
+     */
+    private $phase;
+
     public function __toString()
     {
         return '(id :' . $this->id . ') ' . $this->nbrJEH . ' * ' . $this->prixJEH;
@@ -167,5 +175,21 @@ class RepartitionJEH
     public function getAvMission()
     {
         return $this->avMission;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhase()
+    {
+        return $this->phase;
+    }
+
+    /**
+     * @param mixed $phase
+     */
+    public function setPhase($phase)
+    {
+        $this->phase = $phase;
     }
 }
