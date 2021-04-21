@@ -30,7 +30,6 @@ Jeyser abides by european law [GDPR](https://www.eugdpr.org/) since the release 
 - Features: 
     * Data importer from Siaje
     * Invoices and contract amendment improvement 
-    * Add phase lock when an invoice has been issued 
 - Tests: increase behavioural tests coverage.
 
 
